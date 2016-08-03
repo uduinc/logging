@@ -92,7 +92,7 @@ var logger = new winston.Logger({
 	      	if ( DISPLAY_TIMESTAMP ) {
 	      		formattedMsg += ( options.timestamp() + ' ' );
 	      	}
-	      	formattedMsg += _.capitalize(customLevelsConfig[options.level](_.capitalize(options.level))) + ': ' + 
+	      	formattedMsg += customLevelsConfig[options.level](_.capitalize(options.level)) + ': ' + 
 	      		(undefined !== options.message ? options.message : '');
 	      	if ( DISPLAY_META ) {
 	          	formattedMsg += (options.meta && Object.keys(options.meta).length ? '\n\tMeta: '+ JSON.stringify(options.meta) : '' );
