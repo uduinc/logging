@@ -1,0 +1,28 @@
+{
+  "name": "logging",
+  "version": "0.1.0",
+  "description": "udu Logging setup",
+  "main": "logging.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uduinc/logging.git"
+  },
+  "keywords": [
+    "logging"
+  ],
+  "author": "Bruce Clounie <bruce.w.clounie@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/uduinc/logging/issues"
+  },
+  "homepage": "https://github.com/uduinc/logging#readme",
+  "dependencies": {
+    "cli-color": "^1.1.0",
+    "lodash": "^4.14.1",
+    "minimist": "^1.2.0",
+    "winston": "^2.2.0",
+    "winston-logsene": "^1.1.11"
+  }
+}
