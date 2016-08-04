@@ -146,8 +146,7 @@ _.forOwn( customLevelsConfig, function ( fn, level ) {
 
 			// Extract the non-meta arguments
 			var theArgs = _.slice( args, 1, args.length - 1 );
-			_.each( theArgs, function ( arg, idx ) { if ( _.isObject( arg ) ) { theArgs[idx] = util.inspect( arg, { colors: true, depth: 4 }) } } );
-			msg = theArgs.join( ' ' );
+			msg = util.format.apply( util, theArgs );
 
 			// Put the message's meta in the right place as well
 			meta = args[args.length - 1] || {};
@@ -172,10 +171,8 @@ _.forOwn( customLevelsConfig, function ( fn, level ) {
 		if ( !validMeta ) {
 			// msg = _.slice( args, 1, args.length ).join( ' ' );
 			var theArgs = _.slice( args, 1, args.length );
-			
-			_.each( theArgs, function ( arg, newIdx ) { if ( _.isObject( arg ) ) { theArgs[newIdx] = util.inspect( arg, { colors: true, depth: 4 }) } } );
-			msg = theArgs.join( ' ' );
-			// msg = args.join( ' ' );			
+			msg = util.format.apply( util, theArgs );
+						
 			validMeta = scopedMeta;
 		}
 		if ( validMeta.source === 'unknown_callee' ) {
